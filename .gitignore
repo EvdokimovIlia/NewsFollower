@@ -1,0 +1,6 @@
+*.swp
+CMakeCache.txt
+CMakeFiles
+Makefile
+NewsFollower
+cmake_install.cmake
