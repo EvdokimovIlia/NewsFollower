@@ -5,12 +5,15 @@
 #include <string>
 #include <fstream>
 
+#include <configure.h>
+
+/// @brief Get project's version.
 static std::string version()
 {
      const std::string versionFileName = "VERSION";
      std::string version{};
      std::ifstream versionFile( versionFileName.c_str() );
-     
+
      if( !versionFile.is_open() )
      {
          std::cerr << "File isn't open" << std::endl;
@@ -22,10 +25,11 @@ static std::string version()
      return version;
 }
 
+/// @brief Print project's help.
 static void help(void)
 {
      std::cout << "The NewFollower: version " + version() + "\n\n" +
-                    "-h, --help:      Helper\n" + 
+                    "-h, --help:      Helper\n" +
                     "-v, --version:   Version."
                << std::endl;
 }
@@ -55,6 +59,8 @@ int main( int argc, char** argv )
                     break;
           }
      }
+
+     Configure conf;
 
      return EXIT_SUCCESS;
 }
